@@ -7,7 +7,7 @@ The program asks the user for the name of a .txt file to be encrypted/decrypted 
 Pull the directory as is.  The bash script which the program is launched from (classify.sh), a script for calculating password entropy (entropy.py), and a word list that the program searches (words.txt) should all be present.
 
 ## Use
-To find the classification of a password,p, call the bash script classify.sh from the command line using the call "./classify p"
+To find the classification of a password,**p**, call the bash script classify.sh from the command line using the call ```./classify **p**```
 
 ## Implementation 
 The classification process begins by computing all of the contiguous substrings of 4 characters or more that can be created from the password the user entered. This operation is done by the script classify.sh. As the substrings are computed, they are added to the array, arr, which exists inside classify.sh. After the script fully populates the array with all of these possible substrings, it searches for each of these substrings in a word list containing the 1,500 of the common phrases found in passwords. 
