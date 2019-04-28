@@ -7,11 +7,11 @@ The program asks the user for the name of a .txt file to be encrypted/decrypted 
 Pull the directory as is.  The bash script which the program is launched from (classify.sh), a script for calculating password entropy (entropy.py), and a word list that the program searches (words.txt) should all be present.
 
 ## How to Use
-To find the classification of a password,```sample-password```, call the bash script classify.sh from the command line using the call ```./classify.sh sample-password```
+To find the classification of a password,*sample-password*, call the bash script classify.sh from the command line using the call ```./classify.sh *sample-password*```
 
 ## Examples
-```./classify.sh password               weak```
-```./classify.sh P3GtsHHbu54fq5rrmz     strong```
+```./classify.sh *password*               weak``` <br/>
+```./classify.sh *P3GtsHHbu54fq5rrmz*     strong```
 
 
 
@@ -21,7 +21,7 @@ The script classify.sh begins by computing all of the contiguous substrings of 4
 https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/
 10k-most-common.txt.  This search is considered Test 2.
 
-The entered password was broken into substrings before searching the wordlist to detect cases where common phrases were surrounded by randomness (for instance ```2passwordQ``` is considered to be a weak password because of the substring ‘password’ embedded inside).
+The entered password was broken into substrings before searching the wordlist to detect cases where common phrases were surrounded by randomness (for instance *2passwordQ* is considered to be a weak password because of the substring ‘password’ embedded inside).
 ### entropy.py and Test 2
 After the search, classifier.sh calls the python script entropy.py. This program uses the formula found at:
 https://www.pleacher.com/mp/mlessons/algebra/entropy.html
