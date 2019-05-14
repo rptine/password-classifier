@@ -10,19 +10,19 @@ Pull the directory as is.  The bash script which the program is launched from (c
 To find the classification of a password,*sample-password*, call the bash script classify.sh from the command line using the call ```./classify.sh *sample-password*```
 
 ## Examples
-```./classify.sh *password*               weak``` <br/>
-```./classify.sh *P3GtsHHbu54fq5rrmz*     strong```
+```./classify.sh password```                    ```weak``` <br/>
+```./classify.sh P3GtsHHbu54fq5rrmz```         ```strong```
 
 
 
 ## Implementation and Data Pipeline
-### classify.sh and Test 1
+### Test 1 and classify.sh
 The script classify.sh begins by computing all of the contiguous substrings of 4 characters or more that can be created from the password the user entered. This operation is done by the script classify.sh. As the substrings are computed, they are added to the array, arr, which exists inside classify.sh. After the script fully populates the array with all of these possible substrings, it searches for each of these substrings in a word list containing the 1,500 of the common phrases found in passwords. The word list was obtained from:
 https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/
 10k-most-common.txt.  This search is considered Test 2.
 
 The entered password was broken into substrings before searching the wordlist to detect cases where common phrases were surrounded by randomness (for instance *2passwordQ* is considered to be a weak password because of the substring ‘password’ embedded inside).
-### entropy.py and Test 2
+### Test 2 and entropy.py
 After the search, classifier.sh calls the python script entropy.py. This program uses the formula found at:
 https://www.pleacher.com/mp/mlessons/algebra/entropy.html
 to determine the password’s entropy. The entropy equation is:
@@ -32,7 +32,7 @@ and digits, then ```R = 26 + 10 = 36```) and ```L``` is the number of characters
 ```R``` to the ```L```th power is thus the total number of possible passwords, so passwords that are longer and pull from a larger character pool will have greater entropies. Passwords that are quite short, or that are on the shorter side and only use one or two pools of characters (i.e. only lower case letters and numbers), will have low entropies. Entropy is a measure of predictability; thus, passwords with high entropies are likely to be more randomized. After analysis and reading, I determined that 60 bits of entropy was a reasonable cut-off between weak and strong passwords.
 If the password entropy is less than 60, then entropy.py exits with a value of 1, and otherwise exits with a value of 0. This benchmark check on the entropy is Test 2.
 
-##classify.sh and Final Evaluation 
+## Final Evaluation and classify.sh
 The script classify.sh reads the exit value of the python script entropy.py and thus knows the result of Test 2.  If both Test 1 and Test 2 pass, the script echoes ```Strong``` and if either test fails, the script echoes ```Weak```.
 
 ## Reasoning
