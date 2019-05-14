@@ -4,10 +4,10 @@ The program asks the user for the name of a .txt file to be encrypted/decrypted 
 
 ## Installing
 
-Pull the directory as is.  The bash script which the program is launched from (classify.sh), a script for calculating password entropy (entropy.py), and a word list that the program searches (words.txt) should all be present.
+Pull the directory as is.  The bash script which the program is launched from (```classify.sh```), a script for calculating password entropy (```entropy.py```), and a word list that the program searches (words.txt) should all be present.
 
 ## How to Use
-To find the classification of password: sample-password, call the bash script classify.sh from the command line using the call ```./classify.sh sample-password```
+To find the classification of password: sample-password, call the bash script ```classify.sh``` from the command line using the command ```./classify.sh sample-password```
 
 ## Examples
 ```./classify.sh password```                    ```weak``` <br/>
