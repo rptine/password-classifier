@@ -1,6 +1,6 @@
 # Password Classifier
 
-The program asks the user for the name of a .txt file to be encrypted/decrypted (and for the public and private keys if the user has selected to decrypt), and uses the RSA algorithm and optimal asymmetric encryption padding to encrypt/decrypt the message.
+Program written in python and bash that takes in a proposed password as input and returns whether or not the password is ```weak``` or ```strong``` The decision process is based on entropy and the presence of common collections of characters.
 
 ## Installing
 
