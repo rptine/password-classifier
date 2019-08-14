@@ -1,6 +1,6 @@
 # Password Classifier
 
-Program written in python and bash that takes in a proposed password as input and returns whether or not the password is ```weak``` or ```strong``` The decision process is based on entropy and the presence of common collections of characters.
+Program written in python and bash that takes in a proposed password as input and returns whether or not the password is ```weak``` or ```strong```. The decision process is based on entropy and the presence of common collections of characters.
 
 ## Installing
 
