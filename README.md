@@ -23,6 +23,7 @@ The entered password was broken into substrings before searching the wordlist to
 ### Test 2 and entropy.py
 After the search, classifier.sh calls the python script entropy.py. To calcualate entropy, the program uses the formula:
 * ```Entropy = log2(RL)```
+
 where ```R``` is the size of the pool of characters (i.e. if the password only contains lower-case letters
 and digits, then ```R = 26 + 10 = 36```) and ```L``` is the number of characters in the password.
 ```R``` to the ```L```th power is thus the total number of possible passwords, so passwords that are longer and pull from a larger character pool will have greater entropies. Passwords that are quite short, or that are on the shorter side and only use one or two pools of characters (i.e. only lower case letters and numbers), will have low entropies. Entropy is a measure of predictability; thus, passwords with high entropies are likely to be more randomized. After analysis and reading, I determined that 60 bits of entropy was a reasonable cut-off between weak and strong passwords.
